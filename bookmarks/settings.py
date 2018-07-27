@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-# Configure Django App for Heroku.
-
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,10 +34,7 @@ if DEBUG in ['Off', 'off', 'No', 'False', 'false', '0', '']:
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = [
-    'murmuring-mountain-79062.herokuapp.com',
-    'localhost',
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,6 +42,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = (
     'account',
     'images',
+    'actions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,7 +51,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
     'sorl.thumbnail',
-    'actions',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -144,7 +138,7 @@ ABSOLUTE_URL_OVERRIDES = {
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ''
+EMAIL_HOST_USER = 'my_account@gmail.com'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
@@ -172,3 +166,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_DB = 0
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
