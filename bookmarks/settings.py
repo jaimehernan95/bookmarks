@@ -166,7 +166,3 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_DB = 0
-
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
