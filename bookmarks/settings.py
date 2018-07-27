@@ -96,6 +96,7 @@ WSGI_APPLICATION = 'bookmarks.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 import dj_database_url
+
 DATABASES = {
     'default': dj_database_url.config(
     conn_max_age=600,
@@ -123,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'bookmarks', 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
