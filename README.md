@@ -1,3 +1,9 @@
+Source:
+
+https://www.oreilly.com/learning-paths/learning-path-django/9781788998703/
+
+ web applications from scratch with Django
+
 Building a Social Website
 Objectives:
 1. Creating a social website project
